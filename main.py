@@ -101,7 +101,10 @@ async def send_school_photo(message: types.Message):
 @dp.message_handler(lambda message: message.text == "3. Увлечение")
 async def send_hobby_info(message: types.Message):
     # Здесь вы можете добавить небольшой пост о вашем увлечении
-    await message.answer("Моё главное увлечение - это машинное обучение.", reply_markup=main_keyboard())
+    await message.answer("Я люблю спорт, очень долго занимался футболом и хоккеем, но сейчас предпочитаю футбол и "
+                         "баскетбол. Стараюсь как можно чаще выходить играть и развиваться в своем хобби. Мое рабочее "
+                         "хобби - это программирование, я люблю изучать постоянно новые вещи и совершенствовать "
+                         "свои навыки.", reply_markup=main_keyboard())
 
 
 # Обработка запроса на отправку голосового сообщения GPT
