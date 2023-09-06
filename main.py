@@ -112,7 +112,7 @@ async def send_hobby_info(message: types.Message):
 async def send_gpt_voice(message: types.Message):
     # Здесь вы можете добавить логику для воспроизведения голосового сообщения GPT
     await message.answer_voice(voice=open('gpt_voice.ogg', 'rb'))
-    await message.answer("Вот голосовое сообщение, созданное с помощью GPT.", reply_markup=main_keyboard())
+    await message.answer("Рассказываю про чат-gpt выше", reply_markup=main_keyboard())
 
 
 # Обработка запроса на отправку голосового сообщения о SQL vs NoSQL
