@@ -49,7 +49,7 @@ async def start(message: types.Message):
 async def start(message: types.Message):
     user = message.from_user
     await message.reply(
-        f"https://github.com/Smeight/AboutMe_Bot",
+        f"https://github.com/Smeight/SmeightInfo_Bot/blob/main/main.py",
         reply_markup=main_keyboard()
     )
 
@@ -84,7 +84,7 @@ def main_keyboard():
 # Обработка запроса на отправку последнего селфи
 @dp.message_handler(lambda message: message.text == "1. Последнее селфи")
 async def send_selfie(message: types.Message):
-    # Здесь вы можете добавить логику для отправки последнего селфи
+    # Логика отправки последнего селфи
     await message.answer_photo(photo=open('selfie.jpg', 'rb'))
     await message.answer("Вот мое последнее селфи.", reply_markup=main_keyboard())
 
@@ -92,7 +92,7 @@ async def send_selfie(message: types.Message):
 # Обработка запроса на отправку фото из старшей школы
 @dp.message_handler(lambda message: message.text == "2. Фото из старшей школы")
 async def send_school_photo(message: types.Message):
-    # Здесь вы можете добавить логику для отправки фото из старшей школы
+    # Логика отправки фото из школы
     await message.answer_photo(photo=open('school_photo.jpg', 'rb'))
     await message.answer("Вот мое фото из старшей школы.", reply_markup=main_keyboard())
 
@@ -100,7 +100,7 @@ async def send_school_photo(message: types.Message):
 # Обработка запроса на отправку информации о хобби
 @dp.message_handler(lambda message: message.text == "3. Увлечение")
 async def send_hobby_info(message: types.Message):
-    # Здесь вы можете добавить небольшой пост о вашем увлечении
+    # Рассказ про мое хобби
     await message.answer("Я люблю спорт, очень долго занимался футболом и хоккеем, но сейчас предпочитаю футбол и "
                          "баскетбол. Стараюсь как можно чаще выходить играть и развиваться в своем хобби. Мое рабочее "
                          "хобби - это программирование, я люблю изучать постоянно новые вещи и совершенствовать "
@@ -110,7 +110,7 @@ async def send_hobby_info(message: types.Message):
 # Обработка запроса на отправку голосового сообщения GPT
 @dp.message_handler(lambda message: message.text == "4. Войс: GPT")
 async def send_gpt_voice(message: types.Message):
-    # Здесь вы можете добавить логику для воспроизведения голосового сообщения GPT
+    # Логика отправки войса про GPT
     await message.answer_voice(voice=open('gpt_voice.ogg', 'rb'))
     await message.answer("Рассказываю про чат-gpt выше", reply_markup=main_keyboard())
 
@@ -118,7 +118,7 @@ async def send_gpt_voice(message: types.Message):
 # Обработка запроса на отправку голосового сообщения о SQL vs NoSQL
 @dp.message_handler(lambda message: message.text == "5. Войс: SQL vs NoSQL")
 async def send_sql_vs_nosql_voice(message: types.Message):
-    # Здесь вы можете добавить логику для воспроизведения голосового сообщения о SQL vs NoSQL
+    # Логика отправки войса про SQL
     await message.answer_voice(voice=open('sql_vs_nosql_voice.ogg', 'rb'))
     await message.answer("Вот голосовое сообщение о SQL vs NoSQL.", reply_markup=main_keyboard())
 
@@ -126,7 +126,7 @@ async def send_sql_vs_nosql_voice(message: types.Message):
 # Обработка запроса на отправку голосового сообщения о первой любви
 @dp.message_handler(lambda message: message.text == "6. Войс: Первая любовь")
 async def send_first_love_voice(message: types.Message):
-    # Здесь вы можете добавить логику для воспроизведения голосового сообщения о первой любви
+    # Логика отправки войса про первую любовь
     await message.answer_voice(voice=open('first_love_voice.ogg', 'rb'))
     await message.answer("Вот голосовое сообщение о моей первой любви.", reply_markup=main_keyboard())
 
@@ -144,6 +144,7 @@ async def send_commands(message: types.Message):
 # Функция запуска бота
 def main():
     executor.start_polling(dp, skip_updates=False)
+
 
 if __name__ == '__main__':
     main()
