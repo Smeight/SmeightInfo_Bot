@@ -108,11 +108,11 @@ async def send_hobby_info(message: types.Message):
 
 
 # Обработка запроса на отправку голосового сообщения GPT
-@dp.message_handler(lambda message: message.text == "4. Войс: GPT")
+@dp.message_handler(lambda message: message.text == "4. Войс: Про GPT")
 async def send_gpt_voice(message: types.Message):
     # Логика отправки войса про GPT
     await message.answer_voice(voice=open('gpt_voice.ogg', 'rb'))
-    await message.answer("Рассказываю про чат-gpt выше", reply_markup=main_keyboard())
+    await message.answer("Рассказываю про чат-gpt выше.", reply_markup=main_keyboard())
 
 
 # Обработка запроса на отправку голосового сообщения о SQL vs NoSQL
